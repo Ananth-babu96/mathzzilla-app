@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MdArrowDropDown } from "react-icons/md";
 import { FaPlus, FaMinus, FaDivide, FaTimes } from "react-icons/fa";
 
-const SelectRanges = ({ ranges, setRanges }) => {
+const SelectRanges = ({ ranges, setRanges, startGame }) => {
    const [isOpen, setIsOpen] = useState(false);
    //    const symbols = ["+", "-", "x", "÷"];
    const symbols = [
@@ -44,7 +44,7 @@ const SelectRanges = ({ ranges, setRanges }) => {
    };
 
    return (
-      <div className="relative">
+      <div className={`relative ${startGame ? "pointer-events-none" : ""}`}>
          <div
             className={`text-[#000] bg-[var(--secondary)] w-[130px] md:w-[160px] h-[32px] flex items-center justify-between px-[8px] rounded-[8px] cursor-pointer ${
                isOpen ? "rounded-b-[0]" : ""
@@ -59,7 +59,7 @@ const SelectRanges = ({ ranges, setRanges }) => {
             />
          </div>
          <div
-            className={` w-[130px]  bg-[var(--surface)] absolute top-[32px] rounded-b-[8px] z-9  ${
+            className={` w-[130px] md:w-[160px]  bg-[var(--surface)] absolute top-[32px] rounded-b-[8px] z-9  ${
                isOpen ? "" : "hidden"
             }`}
             onMouseEnter={() => setIsOpen(true)}

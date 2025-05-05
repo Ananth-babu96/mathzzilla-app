@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { MdArrowDropDown } from "react-icons/md";
 
-const SelectDuration = ({ duration, setDuration }) => {
+const SelectDuration = ({ duration, setDuration, startGame }) => {
    const [isOpen, setIsOpen] = useState(false);
    const durations = [30, 60, 120, 180];
    return (
-      <div className="relative  col-span-2 justify-self-center md:justify-self-auto md:col-span-1">
+      <div
+         className={`relative  col-span-2 justify-self-center md:justify-self-auto md:col-span-1 ${
+            startGame ? "pointer-events-none" : ""
+         }`}
+      >
          <div
             className={`text-[#000] bg-[var(--secondary)] w-[130px] md:w-[160px] h-[32px] flex items-center justify-between px-[8px] rounded-[8px] cursor-pointer  ${
                isOpen ? "rounded-b-[0]" : ""

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { MdArrowDropDown } from "react-icons/md";
 import { FaCheck } from "react-icons/fa6";
-const SelectOperators = ({ operations, setOperations }) => {
+const SelectOperators = ({ operations, setOperations, startGame }) => {
    const [isOpen, setIsOpen] = useState(false);
    const operationsList = [
       "addition",
@@ -36,7 +36,7 @@ const SelectOperators = ({ operations, setOperations }) => {
    };
 
    return (
-      <div className="relative">
+      <div className={`relative ${startGame ? "pointer-events-none" : ""}`}>
          <div
             className={`text-[#000] bg-[var(--secondary)] w-[130px] md:w-[160px]  h-[32px] flex items-center justify-between px-[8px] rounded-[8px] cursor-pointer ${
                isOpen ? "rounded-b-[0]" : ""

@@ -23,9 +23,18 @@ const UserInputs = ({
             <SelectOperators
                operations={operations}
                setOperations={setOperations}
+               startGame={startGame}
             />
-            <SelectRanges ranges={ranges} setRanges={setRanges} />
-            <SelectDuration duration={duration} setDuration={setDuration} />
+            <SelectRanges
+               ranges={ranges}
+               setRanges={setRanges}
+               startGame={startGame}
+            />
+            <SelectDuration
+               duration={duration}
+               setDuration={setDuration}
+               startGame={startGame}
+            />
          </div>
          {!startGame && !gameOver ? (
             <StartGame setStartGame={setStartGame} setGameOver={setGameOver} />
