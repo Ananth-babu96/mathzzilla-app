@@ -1,5 +1,6 @@
 "use client";
-import CountdownTimer from "@/app/ComponentsOfMentalMath/CountDownTimer";
+import CountdownTimer from "@/app/ComponentsOfMentalMath/CountdownTimer.jsx";
+
 import Game from "@/app/ComponentsOfMentalMath/Game";
 import GameOverCard from "@/app/ComponentsOfMentalMath/GameOverCard";
 import UserInputs from "@/app/ComponentsOfMentalMath/UserInputs";
